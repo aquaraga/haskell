@@ -9,3 +9,5 @@ myLast' x = case x of [] -> error "List is empty"
                       [s] -> s
                       (x:xs) -> myLast' xs
 					  
+myLast'' :: [a] -> a
+myLast'' xs = head (reverse xs)
