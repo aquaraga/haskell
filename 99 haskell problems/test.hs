@@ -28,3 +28,4 @@ pack x = let
               | y == (head (last acc)) = pack' (init acc ++ [y:(last acc)]) ys
               | otherwise = pack' (acc ++ [[y]]) ys
      in pack' [] x  
+	 
