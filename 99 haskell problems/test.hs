@@ -29,3 +29,18 @@ pack x = let
               | otherwise = pack' (acc ++ [[y]]) ys
      in pack' [] x  
 	 
+startsWith substr str =  take (length substr) str == substr
+
+
+
+duplicate :: [a] -> [a]
+duplicate = foldr (\x acc -> x:x:acc) []
+
+
+duplicate [1..10]
+
+dropEvery :: [a] -> Int -> [a]
+dropEvery l n = map (\x -> l!!x) [x | x <- [1..length l - 1], mod x n /= 0]
+
+slice :: [a] -> Int -> Int -> [a]
+slice l m n = map (\x -> l!!x) [x | x <- [m-1..n-1]]
